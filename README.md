@@ -61,9 +61,38 @@ https://drive.google.com/file/d/0B4rlWa2S_JMBUmlMSG5IRVRMbnc/view?usp=sharing </
 * 程式參考網址:</br>
 https://radimrehurek.com/gensim/corpora/wikicorpus.html</br>
 https://radimrehurek.com/gensim/models/word2vec.html</br>
+
 ## 開發環境
 Python 3.5.2</br>
 pip install gensim</br>
 pip install jieba</br>
 pip install hanziconv</br>
 [note: if your gensim can't install, please check your os then install correct gensim version.](https://blog.csdn.net/dalangzhonghangxing/article/details/78191593)</br>
+
+## Steps
+```
+git clone https://github.com/Alex-CHUN-YU/Word2vec.git
+cd Word2vec
+
+# Dataset
+wget https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-pages-articles.xml.bz2
+
+# Anaconda
+conda create -n Word2vec python==3.5.2
+pip install gensim
+pip install jieba
+pip install hanziconv
+
+# wiki xml -> wiki text
+python wiki_to_txt.py zhwiki-latest-pages-articles.xml.bz2
+
+# zh-CN -> zh-TW
+python segmentation.py
+
+# Training
+python train.py
+
+# Inference
+python main.py
+```
+
