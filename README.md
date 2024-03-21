@@ -81,15 +81,41 @@ wget https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-pages-articles.xml.
 conda create -n Word2vec Python==3.5
 conda activate Word2vec
 pip install --upgrade pip
-pip install gensim
-pip install jieba
-pip install hanziconv
+pip install gensim // Gensim 是一個用於處理自然語言的 Python 庫
+pip install jieba // Jieba 是一個用於中文分詞的 Python 庫
+pip install hanziconv // HanziConv 是一個用於繁簡體中文轉換的 Python 庫
 
 # wiki xml -> wiki text
-python wiki_to_txt.py zhwiki-latest-pages-articles.xml.bz2
+python wiki_to_txt.py zhwiki-latest-pages-articles.xml.bz2 // for 17 mins
+"""
+2024-03-21 15:36:12,548 : INFO : 目前已處理 10000 篇文章
+...
+2024-03-21 15:53:33,693 : INFO : 目前已處理 470000 篇文章
+2024-03-21 15:53:40,378 : INFO : finished iterating over Wikipedia corpus of 472345 documents with 109828203 positions (total 4436651 articles, 129538612 positions before pruning articles shorter than 50 words)
+轉檔完畢!
+"""
 
 # zh-CN -> zh-TW
-python segmentation.py
+python segmentation.py // for one hour
+"""
+(Word2vec) u7088883@yu5k6bctr1711003858184-b7sv2:~/Word2vec$ python segmentation.py
+StopWord Set 已儲存!
+2024-03-21 15:54:07,537 : INFO : 等待中..(簡 to 繁)
+成功簡體轉繁體!
+2024-03-21 15:59:41,018 : INFO : 等待中..(jieba 斷詞，並過濾停用詞)
+Building prefix dict from the default dictionary ...
+2024-03-21 15:59:41,083 : DEBUG : Building prefix dict from the default dictionary ...
+Dumping model to file cache /tmp/jieba.cache
+2024-03-21 15:59:41,714 : DEBUG : Dumping model to file cache /tmp/jieba.cache
+Loading model cost 0.756 seconds.
+2024-03-21 15:59:41,840 : DEBUG : Loading model cost 0.756 seconds.
+Prefix dict has been built successfully.
+2024-03-21 15:59:41,840 : DEBUG : Prefix dict has been built successfully.
+
+
+
+jieba 斷詞完畢，並已完成過濾停用詞!
+"""
 
 # Training
 python train.py
