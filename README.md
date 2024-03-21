@@ -78,7 +78,7 @@ cd Word2vec
 wget https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-pages-articles.xml.bz2
 
 # Anaconda
-conda create -n Word2vec python==3.5.2
+conda create -n Word2vec Python==3.5
 conda activate Word2vec
 pip install gensim
 pip install jieba
