@@ -111,14 +111,16 @@ Loading model cost 0.756 seconds.
 2024-03-21 15:59:41,840 : DEBUG : Loading model cost 0.756 seconds.
 Prefix dict has been built successfully.
 2024-03-21 15:59:41,840 : DEBUG : Prefix dict has been built successfully.
-
-
-
 jieba 斷詞完畢，並已完成過濾停用詞!
 """
 
 # Training
 python train.py
+"""
+(Word2vec) u7088883@yu5k6bctr1711003858184-b7sv2:~/Word2vec$ python train.py
+訓練中...(喝個咖啡吧^0^)
+model 已儲存完畢
+"""
 
 # Inference
 python main.py
