@@ -123,4 +123,5 @@ python train.py
 # Inference
 python main.py
 ```
+![image](https://github.com/ytl0623/Word2vec/assets/55120101/66aed8cd-7d30-4990-a4a9-dfa5a5dc3b51)
 
