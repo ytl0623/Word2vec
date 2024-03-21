@@ -80,6 +80,7 @@ wget https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-pages-articles.xml.
 # Anaconda
 conda create -n Word2vec Python==3.5
 conda activate Word2vec
+pip install --upgrade pip
 pip install gensim
 pip install jieba
 pip install hanziconv
